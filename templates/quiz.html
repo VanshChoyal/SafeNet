@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}SafeNet — Quiz{% endblock %}
+{% block content %}
+<section class="section">
+  <div class="container">
+    <h3>Cyber Safety Quiz</h3>
+    <div id="quiz-app" class="card" aria-live="polite">
+      <div id="quiz-progress" class="tiny">Question <span id="q-index">1</span> of <span id="q-total">5</span></div>
+      <div id="q-container">
+        <!-- question markup injected by JS -->
+      </div>
+
+      <div class="quiz-controls" style="margin-top:12px;display:flex;gap:8px;align-items:center;">
+        <button id="q-prev" class="btn btn-secondary">Previous</button>
+        <button id="q-next" class="btn btn-primary">Next</button>
+        <button id="q-submit" class="btn btn-primary hidden">Submit</button>
+      </div>
+
+      <div id="quiz-result" class="quiz-result" style="margin-top:12px;"></div>
+    </div>
+  </div>
+</section>
+
+{% block scripts %}
+<script>
+// Simple quiz data embedded in page so JS can render steps
+// assign to window to avoid redeclaration errors when script runs multiple times
+window.SAFENET_QUESTIONS = [
+  {text: "You receive an email from your bank asking to confirm your password via a link. What's the best action?", options:["Click the link and log in","Call the bank using the number on their official site","Reply with your account details"], correct:1},
+  {text: "You're using public Wi-Fi. What should you avoid?", options:["Using a VPN for sensitive tasks","Logging into your bank without a VPN","Opening your email client (no attachments)"], correct:1},
+  {text: "You get a message promising a prize if you click. What is true?", options:["It's most likely legitimate","It's likely a scam—don't click","Click and provide personal info to claim prize"], correct:1},
+  {text: "Which of these is a strong password?", options:["8+ chars, numbers, uppercase, symbol","password123","Your birthday"], correct:0},
+  {text: "Someone calls claiming to be from tech support asking for remote access. You should:", options:["Politely refuse and verify the request independently","Grant access to resolve immediately","Share your credentials for convenience"], correct:0}
+]
+</script>
+{% endblock %}
+
+{% endblock %}

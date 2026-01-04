@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% block title %}SafeNet — Cyber Security Awareness{% endblock %}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta name="description" content="SafeNet — Learn about cyber threats and how to protect yourself.">
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a class="logo" href="/"><i class="fa-solid fa-shield-halved"></i> SafeNet</a>
+      </div>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/quiz">Quiz</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      <div class="actions">
+        <button id="theme-toggle" class="btn btn-ghost" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>Awareness is the first line of defense.</strong></p>
+      <nav class="footer-links">
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      <p class="disclaimer">This site is for educational purposes only.</p>
+    </div>
+  </footer>
+
+  {% block scripts %}{% endblock %}
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block title %}SafeNet — Home{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <h2>SafeNet – Cyber Security Awareness</h2>
+      <p class="lead">Protect yourself before it’s too late.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="/quiz">Take the Quiz</a>
+        <a class="btn btn-secondary" href="/about">Learn More</a>
+      </div>
+      <div class="live-counter" aria-live="polite">
+        <i class="fa-solid fa-exclamation-triangle warning"></i>
+        <div>Phishing attempts today: <span id="phishing-counter">24,981</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual card">
+      <div class="visual-inner">
+        <svg width="260" height="260" viewBox="0 0 100 100" aria-hidden="true">
+          <rect x="5" y="5" width="90" height="90" rx="12" fill="#071024" stroke="#00ff9f" stroke-width="1" />
+          <text x="50" y="50" fill="#9cc" font-size="8" text-anchor="middle">Stay Alert</text>
+        </svg>
+        <p class="caption">Security starts with awareness — small actions can block big attacks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="graphs">
+  <div class="container">
+    <h3>Threat trends & breakdowns</h3>
+    <div class="charts-grid">
+      <div class="chart-card">
+        <h4>Reported incidents over time</h4>
+        <canvas id="chart-attacks" width="400" height="200" aria-label="Reported incidents over time" role="img"></canvas>
+      </div>
+      <div class="chart-card">
+        <h4>Incident types</h4>
+        <canvas id="chart-threats" width="400" height="200" aria-label="Incident types" role="img"></canvas>
+      </div>
+      <div class="chart-card">
+        <h4>Common causes</h4>
+        <canvas id="chart-causes" width="400" height="200" aria-label="Common causes of breaches" role="img"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <div class="container">
+    <h3>Why cyber security matters</h3>
+    <p class="short">Cyber threats can compromise your privacy, finances, and identity. Understanding risks and practicing basic safety steps can significantly reduce harm.</p>
+  </div>
+</section>
+
+<section class="section" id="core">
+  <div class="container">
+    <h3>Core threats</h3>
+    <div class="expand-list">
+      <div class="expand-card" data-expanded="false">
+        <button class="expand-head"><div><i class="fa-solid fa-envelope"></i><h4>Phishing</h4></div><span class="chev">▸</span></button>
+        <div class="expand-body">Phishing uses fake emails or messages to trick you into revealing credentials.</div>
+      </div>
+      <div class="expand-card" data-expanded="false">
+        <button class="expand-head"><div><i class="fa-solid fa-virus-covid"></i><h4>Malware</h4></div><span class="chev">▸</span></button>
+        <div class="expand-body">Malware spreads through malicious downloads and can steal or encrypt data.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h3>Stay safe — actionable steps</h3>
+    <ul class="checklist"><li><i class="fa-solid fa-check-circle safe"></i> Use strong & unique passwords</li><li><i class="fa-solid fa-check-circle safe"></i> Enable 2FA</li><li><i class="fa-solid fa-check-circle safe"></i> Don’t click unknown links</li></ul>
+  </div>
+</section>
+
+{% endblock %}
