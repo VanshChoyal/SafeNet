@@ -252,3 +252,13 @@ function initCharts(){
     new Chart(ctx6, {type:'bar',data:{labels:['UPI fraud','Fake job offers','OTP scams','Fake delivery links'], datasets:[{data:[42,35,30,22],backgroundColor:['#ff3b3b','#ffd166','#00c48c','#ffb347']}]},options:{plugins:{legend:{display:false}},responsive:true}})
   }
 }
+
+
+// Ensure bot image width is changed after full page load
+window.addEventListener('load', function(){
+  try{
+    const img = document.querySelector('#botlink-circle img')
+    if(img) img.style.width = '60px'
+  }catch(e){ console.warn('Failed to set bot image width on load', e) }
+})
+
