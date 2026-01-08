@@ -1,12 +1,51 @@
 {% extends 'base.html' %}
 {% block title %}SafeNet — Contact{% endblock %}
 {% block content %}
+<div style="display:grid;grid-template-columns:280px 1fr;gap:0;max-width:100%;margin:0;padding:0">
+<!-- Sidebar -->
+<aside class="sidebar" style="margin-left:10px;margin-top:0;padding-top:12px">
+  <div class="sidebar-card">
+    <h4><i class="fa-solid fa-envelope"></i> Contact Info</h4>
+    <p style="font-size:13px;margin:6px 0 0"><strong>Phone:</strong></p>
+    <p style="font-size:13px;margin:2px 0 0;color:var(--accent-green)">+91 9203770337</p>
+    <p style="font-size:13px;margin:6px 0 0"><strong>Email:</strong></p>
+    <p style="font-size:13px;margin:2px 0 0;color:var(--accent-green)">support.safenet@gmail.com</p>
+  </div>
+
+  <div class="sidebar-card">
+    <h4><i class="fa-solid fa-clock"></i> Response Time</h4>
+    <p style="font-size:13px;color:var(--muted);margin:0">We aim to reply within 2 business days.</p>
+  </div>
+
+  <div class="sidebar-card">
+    <h4><i class="fa-solid fa-comments"></i> How We Help</h4>
+    <ul class="sidebar-list">
+      <li>Report security concerns</li>
+      <li>Request resources</li>
+      <li>Ask questions</li>
+      <li>Provide feedback</li>
+    </ul>
+  </div>
+
+  <div class="sidebar-card">
+    <h4><i class="fa-solid fa-link"></i> Navigate</h4>
+    <ul class="sidebar-list">
+      <li><a href="/"><i class="fa-solid fa-arrow-right"></i> Home</a></li>
+      <li><a href="/quiz"><i class="fa-solid fa-arrow-right"></i> Quiz</a></li>
+      <li><a href="/about"><i class="fa-solid fa-arrow-right"></i> About</a></li>
+    </ul>
+  </div>
+</aside>
+
+<div style="padding:12px;padding-left:10px">
 <section class="section">
   <div class="container">
     <h3>Contact SafeNet</h3>
     <p class="short">Reach out to us for support or resources.</p>
 
-    <div style="display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start">
+    <p class="tiny"><strong>Site by:</strong> Vansh Choyal &amp; Aarush Goyal (Class IX) — St.Norbert School, Indore</p>
+
+    <div style="display:grid;grid-template-columns:1fr;gap:18px">
       <div>
         <form id="contact-form" class="contact-form">
           <input type="text" id="c-name" placeholder="Your name">
@@ -16,13 +55,9 @@
           <div id="contact-status" class="tiny"></div>
         </form>
       </div>
-      <div class="card">
-        <h4>Contact info</h4>
-        <p>Phone: <strong>+91 9203770337</strong></p>
-        <p>Email: <strong>support.safenet@gmail.com</strong></p>
-        <p class="tiny">We aim to reply within 2 business days.</p>
-      </div>
     </div>
   </div>
 </section>
+</div>
+</div>
 {% endblock %}

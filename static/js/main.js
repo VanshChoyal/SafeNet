@@ -145,6 +145,51 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // Initialize charts
   initCharts()
+    // Hero slideshow (right side) — images provided by template
+    const heroSlideshow = document.getElementById('hero-slideshow')
+    if(heroSlideshow){
+      const slides = Array.from(heroSlideshow.querySelectorAll('.slide'))
+      const dotsWrap = document.getElementById('sl-dots')
+      const prevBtn = document.getElementById('sl-prev')
+      const nextBtn = document.getElementById('sl-next')
+      let current = 0
+      let interval = null
+
+      // build dots
+      slides.forEach((s, i) => {
+        const btn = document.createElement('button')
+        btn.setAttribute('aria-label', 'Go to slide ' + (i+1))
+        btn.dataset.index = i
+        btn.addEventListener('click', () => { goTo(i) })
+        dotsWrap.appendChild(btn)
+      })
+
+      const dotButtons = Array.from(dotsWrap.querySelectorAll('button'))
+
+      function updateUI(){
+        slides.forEach((s,i)=> s.classList.toggle('active', i===current))
+        dotButtons.forEach((d,i)=> d.classList.toggle('active', i===current))
+      }
+
+      function goTo(i){ current = (i+slides.length) % slides.length; updateUI(); }
+      function next(){ goTo(current+1) }
+      function prev(){ goTo(current-1) }
+
+      if(nextBtn) nextBtn.addEventListener('click', ()=>{ next(); resetTimer() })
+      if(prevBtn) prevBtn.addEventListener('click', ()=>{ prev(); resetTimer() })
+
+      function startTimer(){ interval = setInterval(()=>{ next() }, 3000) }
+      function stopTimer(){ if(interval){ clearInterval(interval); interval = null } }
+      function resetTimer(){ stopTimer(); startTimer() }
+
+      heroSlideshow.addEventListener('mouseenter', stopTimer)
+      heroSlideshow.addEventListener('mouseleave', startTimer)
+
+      // initial
+      updateUI()
+      startTimer()
+    }
+
 })
 
 /* Password strength helper */

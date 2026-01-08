@@ -1,11 +1,47 @@
 {% extends 'base.html' %}
 {% block title %}SafeNet — Quiz{% endblock %}
 {% block content %}
+<div style="display:grid;grid-template-columns:280px 1fr;gap:0;max-width:100%;margin:0;padding:0">
+
+<!-- Sidebar -->
+<aside class="sidebar" style="margin-left:10px;margin-top:0;padding-top:12px">
+  <div class="sidebar-card">
+    <h4><i class="fa-solid fa-clipboard-list"></i> Quiz Info</h4>
+    <p style="font-size:13px;color:var(--muted);margin:0">Test your cybersecurity knowledge with 10 questions covering phishing, malware, passwords, and best practices.</p>
+  </div>
+
+  <div class="sidebar-card">
+    <h4><i class="fa-solid fa-trophy"></i> Topics Covered</h4>
+    <ul class="sidebar-list">
+      <li>Phishing detection</li>
+      <li>Safe browsing</li>
+      <li>Password security</li>
+      <li>Social engineering</li>
+      <li>Data protection</li>
+    </ul>
+  </div>
+
+  <div class="sidebar-card">
+    <h4><i class="fa-solid fa-bookmark"></i> Resources</h4>
+    <ul class="sidebar-list">
+      <li><a href="/#why"><i class="fa-solid fa-arrow-right"></i> Why It Matters</a></li>
+      <li><a href="/#core"><i class="fa-solid fa-arrow-right"></i> Core Threats</a></li>
+      <li><a href="/about"><i class="fa-solid fa-arrow-right"></i> About</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-card" style="background:rgba(0,229,177,0.08);border-left:3px solid var(--accent-green)">
+    <h4 style="margin-top:0"><i class="fa-solid fa-star"></i> Tips</h4>
+    <p style="font-size:12px;margin:0;color:var(--text-color)">Read each question carefully. There's no time limit—take your time and review before submitting!</p>
+  </div>
+</aside>
+
+<div style="padding:12px;padding-left:10px">
 <section class="section">
-  <div class="container">
+  <div>
     <h3>Cyber Safety Quiz</h3>
     <div id="quiz-app" class="card" aria-live="polite">
-      <div id="quiz-progress" class="tiny">Question <span id="q-index">1</span> of <span id="q-total">5</span></div>
+      <div id="quiz-progress" class="tiny">Question <span id="q-index">1</span> of <span id="q-total">10</span></div>
       <div id="q-container">
         <!-- question markup injected by JS -->
       </div>
@@ -20,6 +56,16 @@
     </div>
   </div>
 </section>
+</div>
+    </ul>
+  </div>
+
+  <div class="sidebar-card" style="background:rgba(0,229,177,0.08);border-left:3px solid var(--accent-green)">
+    <h4 style="margin-top:0"><i class="fa-solid fa-star"></i> Tips</h4>
+    <p style="font-size:12px;margin:0;color:var(--text-color)">Read each question carefully. There's no time limit—take your time and review before submitting!</p>
+  </div>
+</aside>
+</div>
 
 {% block scripts %}
 <script>
@@ -30,7 +76,12 @@ window.SAFENET_QUESTIONS = [
   {text: "You're using public Wi-Fi. What should you avoid?", options:["Using a VPN for sensitive tasks","Logging into your bank without a VPN","Opening your email client (no attachments)"], correct:1},
   {text: "You get a message promising a prize if you click. What is true?", options:["It's most likely legitimate","It's likely a scam—don't click","Click and provide personal info to claim prize"], correct:1},
   {text: "Which of these is a strong password?", options:["8+ chars, numbers, uppercase, symbol","password123","Your birthday"], correct:0},
-  {text: "Someone calls claiming to be from tech support asking for remote access. You should:", options:["Politely refuse and verify the request independently","Grant access to resolve immediately","Share your credentials for convenience"], correct:0}
+  {text: "Someone calls claiming to be from tech support asking for remote access. You should:", options:["Politely refuse and verify the request independently","Grant access to resolve immediately","Share your credentials for convenience"], correct:0},
+  {text: "You download what appears to be a free movie file but your antivirus flags it as malware. What should you do?", options:["Disable antivirus and run it anyway","Delete the file immediately and scan your device","Open it in a sandbox environment to check"], correct:1},
+  {text: "Your workplace asks you to store sensitive client data on a personal cloud storage account. What's best practice?", options:["Use personal cloud storage as requested","Inform your manager this violates data security policies","Share login credentials with colleagues for easy access"], correct:1},
+  {text: "You notice a new login alert from an unfamiliar location on your email account. Your first action should be:", options:["Change your password immediately and review recent activity","Ignore it—it's probably just a notification error","Forward the alert to random email addresses"], correct:0},
+  {text: "A colleague shares a USB drive asking you to copy files from your work computer. You should:", options:["Plug it in directly without scanning","Ask your IT department first and scan with antivirus","Run all files immediately without checking"], correct:1},
+  {text: "Your social media account was compromised and passwords weren't changed elsewhere. What's the risk?", options:["Low—each account is independent","High—attackers may access other accounts with the same password","Moderate—only related accounts are at risk"], correct:1}
 ]
 </script>
 {% endblock %}

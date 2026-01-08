@@ -1,8 +1,45 @@
 {% extends 'base.html' %}
 {% block title %}SafeNet — Home{% endblock %}
 {% block content %}
+<div style="display:grid;grid-template-columns:280px 1fr;gap:0;max-width:100%;margin:0;padding:0">
+
+<!-- Sidebar -->
+<aside class="sidebar" style="margin-left:10px;margin-top:0;padding-top:12px">
+  <div class="sidebar-card">
+    <h4><i class="fa-solid fa-lightbulb"></i> Quick Tips</h4>
+    <ul class="sidebar-list">
+      <li><strong>Use 2FA</strong> on all accounts</li>
+      <li><strong>Never share</strong> passwords</li>
+      <li><strong>Check URLs</strong> before clicking</li>
+      <li><strong>Update</strong> software regularly</li>
+      <li><strong>Backup</strong> your data</li>
+    </ul>
+  </div>
+
+  <div class="sidebar-card">
+    <h4><i class="fa-solid fa-graduation-cap"></i> Learn</h4>
+    <ul class="sidebar-list">
+      <li><a href="/quiz"><i class="fa-solid fa-arrow-right"></i> Take the Quiz</a></li>
+      <li><a href="#core"><i class="fa-solid fa-arrow-right"></i> Core Threats</a></li>
+      <li><a href="/about"><i class="fa-solid fa-arrow-right"></i> About SafeNet</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-card">
+    <h4><i class="fa-solid fa-exclamation-circle"></i> Common Threats</h4>
+    <p style="font-size:13px;color:var(--muted);margin:0">Phishing, Malware, Social Engineering, Weak Passwords, Unencrypted Data</p>
+  </div>
+
+  <div class="sidebar-card">
+    <h4><i class="fa-solid fa-phone"></i> Support</h4>
+    <p style="font-size:13px;margin:6px 0 0"><strong>+91 9203770337</strong></p>
+    <p style="font-size:13px;color:var(--muted);margin:4px 0 0">support.safenet@gmail.com</p>
+  </div>
+</aside>
+
+<div style="padding:12px;padding-left:10px">
 <section class="hero">
-  <div class="container hero-grid">
+  <div class="hero-grid">
     <div class="hero-copy">
       <h2>SafeNet – Cyber Security Awareness</h2>
       <p class="lead">Protect yourself before it’s too late.</p>
@@ -16,20 +53,25 @@
       </div>
     </div>
 
-    <div class="hero-visual card">
-      <div class="visual-inner">
-        <svg width="260" height="260" viewBox="0 0 100 100" aria-hidden="true">
-          <rect x="5" y="5" width="90" height="90" rx="12" fill="#071024" stroke="#00ff9f" stroke-width="1" />
-          <text x="50" y="50" fill="#9cc" font-size="8" text-anchor="middle">Stay Alert</text>
-        </svg>
-        <p class="caption">Security starts with awareness — small actions can block big attacks.</p>
+    <div class="hero-visual">
+      <div class="slideshow-wrapper" aria-hidden="false">
+        <div class="slideshow" id="hero-slideshow" aria-label="Homepage slideshow">
+          {% for i in range(1,9) %}
+            <div class="slide" data-index="{{ i-1 }}">
+              <img src="{{ url_for('static', filename='img/SlideShow_img' ~ i ~ '.png') }}" alt="Slide {{ i }}">
+            </div>
+          {% endfor %}
+          <button class="slideshow-arrow prev" id="sl-prev" aria-label="Previous slide">◀</button>
+          <button class="slideshow-arrow next" id="sl-next" aria-label="Next slide">▶</button>
+          <div class="slideshow-dots" id="sl-dots" role="tablist" aria-label="Slide navigation"></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <section class="section" id="graphs">
-  <div class="container">
+  <div>
     <h3>Threat trends & breakdowns</h3>
     <div class="charts-grid">
       <div class="chart-card">
@@ -49,14 +91,14 @@
 </section>
 
 <section class="section" id="why">
-  <div class="container">
+  <div>
     <h3>Why cyber security matters</h3>
     <p class="short">Cyber threats can compromise your privacy, finances, and identity. Understanding risks and practicing basic safety steps can significantly reduce harm.</p>
   </div>
 </section>
 
 <section class="section" id="core">
-  <div class="container">
+  <div>
     <h3>Core threats</h3>
     <div class="expand-list">
       <div class="expand-card" data-expanded="false">
@@ -72,10 +114,11 @@
 </section>
 
 <section class="section">
-  <div class="container">
+  <div>
     <h3>Stay safe — actionable steps</h3>
     <ul class="checklist"><li><i class="fa-solid fa-check-circle safe"></i> Use strong & unique passwords</li><li><i class="fa-solid fa-check-circle safe"></i> Enable 2FA</li><li><i class="fa-solid fa-check-circle safe"></i> Don’t click unknown links</li></ul>
   </div>
-</section>
+</section></div>
+</div>
 
 {% endblock %}
