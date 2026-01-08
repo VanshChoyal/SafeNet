@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="SafeNet Shield">
+  <title>SafeNet Shield</title>
+  <path d="M32 2 L52 8 v16 c0 12-8 22-20 28 -12-6-20-16-20-28 V8 Z" fill="#0b76ff"/>
+  <path d="M32 2 L32 54 c12-6 20-16 20-28 V8 L32 2 Z" fill="#062d6f"/>
+</svg>
