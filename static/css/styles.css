@@ -202,7 +202,7 @@ body{background:linear-gradient(180deg,var(--bg),var(--bg-2));}
 [title]{position:relative}
 
 /* Sidebar styles */
-.sidebar{position:sticky;top:400px;height:fit-content;display:flex;flex-direction:column;gap:12px}
+.sidebar{position:sticky;top:80px;height:fit-content;display:flex;flex-direction:column;gap:12px}
 .sidebar-card{background:var(--panel);padding:14px;border-radius:var(--radius);box-shadow:var(--card-shadow);border:1px solid rgba(255,255,255,0.02)}
 .sidebar-card h4{margin:0 0 8px;font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;color:var(--text-color)}
 .sidebar-card h4 i{color:var(--accent-green);font-size:16px}
